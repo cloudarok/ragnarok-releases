@@ -10,13 +10,15 @@ Install Git for repository work. Each desktop installer includes its runtime. Co
 
 For the terminal workspace, install Node.js 22.13+ and choose **Tools → Install terminal command** in Ragnarok. Follow the displayed PATH instructions, keep the desktop app open, then run `rag` in your project. `rag ui` opens the shared local Web UI.
 
-The optional Cloud runtime archive is application code for a supervised Linux worker. VM hosting and model usage require your own connected accounts. Its setup guide is included with the release.
+The optional Cloud runtime archive is application code for a supervised Linux runtime. VM hosting and model usage require your own connected accounts. Its setup guide is included with the release.
 
 ## Install
 
 - **macOS 13+:** Open the matching DMG, drag Ragnarok into Applications, and launch it from there.
 - **Windows 10/11 x64:** Run the guided per-user setup, then launch Ragnarok from Start.
 - **Linux x64:** Install the DEB with your package manager, or make the AppImage executable. AppImage requires FUSE 2 and working user namespaces. Prefer DEB if your distribution restricts AppImage sandboxing.
+
+[Detailed installation guide](INSTALLATION.md) · [Cloud setup](CLOUD.md)
 
 ## Updates and rollback
 
