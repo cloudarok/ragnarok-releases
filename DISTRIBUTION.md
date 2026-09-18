@@ -6,12 +6,12 @@ Native installer CI builds on each supported OS, installs and launches twice, an
 
 ## Signing
 
-Unsigned builds are explicitly labelled engineering previews. No signing credentials are bundled or committed. To produce a publisher-signed release, dispatch Desktop installers with `signed=true` and configure repository secrets:
+Mac browser downloads are paused after discovering invalid inherited Electron signatures in alpha.17. Local Mac builds now use explicit ad-hoc signing (`identity: "-"`), with hardened runtime disabled for that local-only mode, and fail if deep/strict signature verification fails. This is not publisher signing or notarization. Windows builds without publisher credentials remain engineering previews. No signing credentials are bundled or committed. To produce a publisher-signed release, dispatch Desktop installers with `signed=true` and configure repository secrets:
 
 - macOS: `MAC_CSC_LINK`, `MAC_CSC_KEY_PASSWORD`, `APPLE_ID`, `APPLE_APP_SPECIFIC_PASSWORD`, `APPLE_TEAM_ID`.
 - Windows: `WIN_CSC_LINK`, `WIN_CSC_KEY_PASSWORD`.
 
-The packaging command requires these credentials in signed mode and enables electron-builder's signing/notarization; missing signing fails the build. A signed release still needs native signature verification and an external clean-machine install check before changing download copy. This release has no publisher signing credentials and remains unsigned.
+The packaging command requires these credentials in signed mode and enables electron-builder's signing/notarization; missing signing fails the build. Both the completed Mac bundle and its copy installed from the final DMG must pass deep/strict verification with the Ragnarok identifier. Signed mode additionally requires the expected Developer ID team, a valid stapled notarization ticket, and Gatekeeper acceptance. Reports distinguish local signature integrity from browser distribution readiness. Do not publish Mac download buttons until `macSecurity.browserDistributionReady` is true for both Mac architectures and a browser-downloaded clean-machine launch has been checked. Signing credentials are not currently configured.
 
 ## Updates and rollback
 

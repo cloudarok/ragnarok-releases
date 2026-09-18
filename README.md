@@ -2,6 +2,8 @@
 
 Your AI development environment.
 
+> **Mac downloads paused:** The alpha.17 Mac packages have an invalid signature and may appear damaged. Re-downloading does not fix this. We are preparing properly signed and notarized replacements. Windows and Linux remain available.
+
 [Download Ragnarok](https://github.com/cloudarok/ragnarok-releases/releases) for macOS (Apple silicon and Intel), Windows x64, and Linux x64 (DEB or AppImage).
 
 These are engineering previews. Current macOS and Windows installers are unsigned; macOS builds are not notarized. Review release notes and SHA-256 checksums before installing. Keep operating-system security protections enabled.

@@ -18,9 +18,11 @@ Windows ARM, Linux ARM, 32-bit systems and every Linux distribution are not cert
 
 ## macOS
 
+**Mac downloads are paused.** The alpha.17 DMGs have invalid bundle signatures, and macOS may describe the app as damaged. The file checksum is valid; downloading it again does not repair the signature. Do not bypass this error. The website will resume Mac downloads after Developer ID signing, stapled Apple notarization and Gatekeeper checks pass. Windows and Linux packages are unaffected by this Mac signing defect.
+
 Use Apple menu → About This Mac to identify the chip. Open the matching DMG, drag Ragnarok into Applications, eject the disk image, and open Ragnarok from Applications.
 
-This preview is not Developer ID signed or notarized. If macOS blocks it, verify the release and checksum first, then use System Settings → Privacy & Security → Open Anyway if your policy allows it. Do not disable Gatekeeper or remove quarantine globally. Managed Macs may require administrator approval. A notarized public release requires the publisher's Apple Developer credentials.
+Local Mac builds now receive fresh ad-hoc signatures and must pass deep, strict signature verification. Ad-hoc signing verifies bundle integrity but does not establish Apple-approved publisher identity or notarization. These builds are for local development, not normal browser distribution. Keep Gatekeeper enabled. Public Mac releases require the publisher's Apple Developer credentials.
 
 ## Windows
 
